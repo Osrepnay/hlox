@@ -1,0 +1,79 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hlox
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hlox#readme>
+homepage:       https://github.com/githubuser/hlox#readme
+bug-reports:    https://github.com/githubuser/hlox/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hlox
+
+library
+  exposed-modules:
+      Interpreter
+      Parser
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , megaparsec
+    , parser-combinators
+    , text
+    , transformers
+    , validation
+  default-language: Haskell2010
+
+executable hlox-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , hlox
+    , megaparsec
+    , parser-combinators
+    , text
+    , transformers
+    , validation
+  default-language: Haskell2010
+
+test-suite hlox-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , hlox
+    , megaparsec
+    , parser-combinators
+    , text
+    , transformers
+    , validation
+  default-language: Haskell2010
